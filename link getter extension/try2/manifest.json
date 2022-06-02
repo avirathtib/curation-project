@@ -1,0 +1,27 @@
+{
+    "name": "Link saver",
+    "description": "Achieve current web link",
+    "version": "1.0",
+    "manifest_version": 3,
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "firebase.js"
+    },
+    "action": {
+        "default_title": "MV3Test",
+        "default_popup": "popup.html"
+      },
+    "permissions": [
+      "tabs",
+      "scripting",
+      "activeTab",
+      "identity"
+    ],
+"content_scripts":[{
+    "matches": ["<all_urls>"],
+    "js": ["app.js"],
+    "run_at": "document_end"
+}]
+  }
